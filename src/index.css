@@ -3,7 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{
+
+:root {
     --white: #fff;
     --black: #111;
     --blue: #3a80e9;
@@ -12,7 +13,8 @@
     --green: #61c96f;
     --red: #f94141;
 }
-body{
+
+body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -20,36 +22,48 @@ body{
     font-family: "Inter", sans-serif;
 }
 
-::selection{
+::selection {
     background-color: var(--blue);
     color: var(--white);
     font-size: 40px;
 
 }
 
-.crypto-text{
-    
+.crypto-text {
+
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--white);
 }
-.crypto-text:hover{
+
+.crypto-text:hover {
     color: var(--black);
     -webkit-text-stroke-color: var(--white);
-    transition:all 0.3s;
+    transition: all 0.3s;
 }
+
 img {
-    user-drag: none; 
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  }
-  
-  td{
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+td {
     text-align: left !important;
     width: 18%;
-  }
-  html{
+}
+
+html {
     scroll-behavior: smooth;
-  }
+}
+
+.desc-info a{
+    text-decoration: underline ;
+    text-underline-offset: 2px;
+}
+.desc-info a:hover{
+    color: var(--blue);
+
+}
