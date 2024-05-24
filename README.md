@@ -95,7 +95,7 @@ We welcome contributions to improve the Crypto Tracker application. To contribut
 
 ## Contact
 
-If you have any questions, feel free to open an issue or contact the project maintainer at [your-ayushsingh2442@gmail.com].
+If you have any questions, feel free to open an issue or contact the project maintainer at ayushsingh2442@gmail.com.
 
 ---
 
