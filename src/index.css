@@ -50,3 +50,6 @@ img {
     text-align: left !important;
     width: 18%;
   }
+  html{
+    scroll-behavior: smooth;
+  }
