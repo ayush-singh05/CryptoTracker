@@ -1,8 +1,8 @@
 import axios from "axios"
 
-export const getCoinPrices = (id,days) => {
+export const getCoinPrices = async (id,days) => {
 
-    return axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`, {
+    return axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`, {
         headers: {
             'Authorization': `x-api-key ${'CG-eXp3Cgon4EWmEhhw2HD1Cres'}`
         }

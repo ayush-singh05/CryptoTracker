@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const getCoinData = (id) => {
+export const getCoinData = async (id) => {
 
     return axios.get(`https://api.coingecko.com/api/v3/coins/${id}`, {
         headers: {
