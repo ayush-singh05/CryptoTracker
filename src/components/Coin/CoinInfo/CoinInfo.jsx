@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function CoinInfo({ heading, desc}) {
     const [flag,setFlag] = useState(false);
-    const sortDesc = desc.slice(0,350) + "<span style='color: var(--gray)' > Read more...</span>";
+    const sortDesc = desc?.slice(0,350) + "<span style='color: var(--gray)' > Read more...</span>";
     const longDesc = desc+ "<span style='color: var(--gray)' > Read Less...</span>";
 
 

@@ -81,7 +81,7 @@ function Coin() {
               <SelectDays days={days} handleDaysChanges={handleDaysChanges} />
              <LineChart chartData={chartData}/>
             </div>
-            <CoinInfo heading={coin.name} desc={coin.desc} />
+            <CoinInfo heading={coin?.name} desc={coin?.desc} />
             
           </div>
 
