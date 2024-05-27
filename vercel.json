@@ -1,0 +1,20 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/dashboard",
+            "dest": "/"
+        },
+        {
+            "src": "/coin/:id",
+            "dest": "/"
+        },
+        {
+            "src": "/compare",
+            "dest": "/"
+        }
+    ]
+}
