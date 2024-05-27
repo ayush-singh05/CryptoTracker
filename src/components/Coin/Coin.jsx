@@ -11,6 +11,7 @@ import LineChart from './LineChart/LineChart';
 import SelectDays from './SelectDays/SelectDays';
 import { settingChartData } from '../../functions/settingChartData';
 import { convertDate } from '../../functions/convertDate';
+import PriceToggle from './PriceType/PriceToggle';
 
 
 
@@ -20,7 +21,7 @@ function Coin() {
   const [coin, setCoin] = useState();
   const [days, setDays] = useState(7);
   const [chartData, setChartData] = useState({labels:[],datasets:[]});
-
+  const [priceType, setPriceType] = useState('prices');
   useEffect(() => {
     if (id) {
       getData(id); 
@@ -30,9 +31,9 @@ function Coin() {
 
   useEffect(() => {
     if (id) {
-      fetchPrices(id, days);
+      fetchPrices(id, days,priceType);
     }
-  }, [id, days]);
+  }, [id, days,priceType]);
 
   async function getData(id) {
     const data = await getCoinData(id);
@@ -44,16 +45,17 @@ function Coin() {
     }
   }
 
-  const fetchPrices = async (id, days) => {
+  const fetchPrices = async (id, days,priceType) => {
     try {
       setIsLoading(true);
-      const prices = await getCoinPrices(id, days);
-      console.log("Prices fetched successfully:", prices);
+      const prices = await getCoinPrices(id, days,priceType);
+      
       if (prices) {
         settingChartData(setChartData, prices);
+        
         setIsLoading(false);
       } else {
-        console.error("No prices data found for ID:", id, "and days:", days);
+        
         setIsLoading(false);
       }
     } catch (error) {
@@ -66,6 +68,16 @@ function Coin() {
     setDays(selectedDays);
   };
 
+  const handlePriceChanges =  (event) => {
+    // setIsLoading(true);
+    setPriceType(event.target.value);
+    // const prices = await getCoinPrices(id,event.target.value, newPriceType);
+    // if(prices){
+    //   settingChartData(setChartData,prices);
+    //   setIsLoading(false);
+    // }
+    
+};
 
   return (
     <div>
@@ -77,9 +89,12 @@ function Coin() {
               className='block mx-auto w-11/12 px-2 bg-darkgrey m-6 rounded-xl'>
               <List coin={coin} />
             </div>
-            <div className='block mx-auto w-11/12 px-2 bg-darkgrey m-6 rounded-xl'>
-              <SelectDays days={days} handleDaysChanges={handleDaysChanges} />
-             <LineChart chartData={chartData}/>
+            <div className='block mx-auto w-11/12 px-2 bg-darkgrey m-6 rounded-xl' >
+             <div className=''>
+             <SelectDays days={days} handleDaysChanges={handleDaysChanges} />
+             <PriceToggle priceType={priceType} handlePriceChanges={handlePriceChanges}/>
+             </div>
+             <LineChart chartData={chartData} priceType={priceType}/>
             </div>
             <CoinInfo heading={coin?.name} desc={coin?.desc} />
             

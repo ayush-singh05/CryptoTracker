@@ -5,12 +5,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectDays({days,handleDaysChanges}) {
+export default function SelectDays({days,handleDaysChanges,noPtag}) {
 
   return (
     <div className='flex justify-start items-center p-4 text-white' >
       
-        <p className='mr-4 py-4'>Price Change in the last</p>
+        {!noPtag && <p className='mr-4 py-4'>Price Change in the last</p>}
         <Select
           sx={{height: "2.5rem",
             color: "var(--white)",

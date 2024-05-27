@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import Coin from './components/Coin/Coin'
 import DashboardPage from './components/Dasboard/DashboardPage'
+import Compare from './pages/Compare'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/dashboard' element={<DashboardPage/>}/>
           <Route path='/coin/:id' element={<Coin/>}/>
+          <Route path='/compare' element={<Compare/>}/>
           
         </Routes>
       </BrowserRouter>
