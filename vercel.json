@@ -15,7 +15,7 @@
         {
             "src": "/compare",
             "dest": "/"
-        }
+        },
         {
             "src": "/watchlist",
             "dest": "/"
