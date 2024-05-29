@@ -1,7 +1,7 @@
 import React from 'react'
 import TemporaryDrawer from './drawer';
 import Button from '../../Button/Button'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 function
@@ -10,10 +10,11 @@ function
         <div className='flex justify-between items-center py-2 px-4  bg-black sticky top-0 z-50 md:py-6 max-md:px-5 '>
            <Link to='/'> <h1 className='text-3xl font-bold max-md:text-xl'>CryptoTracker <span className='text-blue'>.</span></h1> </Link>
             <div className='link flex gap-6 text-grey font-semibold text-base max-md:hidden items-center'>
-                <Link to='/' className='hover:text-white transition ease-in duration-300' href=""><p>Home</p></Link >
-                <Link to='/compare' className='hover:text-white transition ease-in duration-300' href=""> <p>Compare</p></Link >
-                <Link to='/watchlist' className='hover:text-white transition ease-in duration-300' href=""> <p>Watchlist</p></Link >
-                <Link to='/dashboard' className='hover:text-white transition ease-in duration-300' href="#"><Button text={"Dashboard"} onClick={() => console.log("clicked")} /></Link >
+                <NavLink className={({ isActive, isPending }) =>
+                    isActive ? "text-white hover:text-white transition ease-in duration-300" : 'hover:text-white transition ease-in duration-300'} to='/'  href=""><p>Home</p></NavLink >
+                <NavLink className={({isActive}) => isActive ? 'text-white' : 'hover:text-white transition ease-in duration-300'} to='/compare' href=""> <p>Compare</p></NavLink >
+                <NavLink className={({isActive}) => isActive ? 'text-white' : 'hover:text-white transition ease-in duration-300'} to='/watchlist' href=""> <p>Watchlist</p></NavLink >
+                <NavLink className={({isActive}) => isActive ? 'text-white' : 'hover:text-white transition ease-in duration-300'} to='/dashboard' href="#"><Button text={"Dashboard"} onClick={() => console.log("clicked")} /></NavLink >
                 
             </div>
             <div className='hidden max-md:block'>
