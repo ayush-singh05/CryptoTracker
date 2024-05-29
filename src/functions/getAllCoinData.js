@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
 export const allCoinData = async () => {
     try {
         const response = await axiosInstance.get(`markets?vs_currency=usd&order=volume_desc&per_page=100&page=1&sparkline=false`);
-        console.log('Data fetched successfully:', response.data);
+        // console.log('Data fetched successfully:', response.data);
         return response.data;
       } catch (error) {
         console.error('Error fetching data:', error);

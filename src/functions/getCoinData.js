@@ -12,7 +12,7 @@ export const getCoinData = async (id) => {
 
     try {
         const response = await axiosInstance.get(`/coins/${id}`);
-        console.log('Data fetched successfully:', response.data);
+        // console.log('Data fetched successfully:', response.data);
         return response.data;
       } catch (error) {
         console.error('Error fetching data:', error);

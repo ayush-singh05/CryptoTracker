@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
 export const getCoinPrices = async (id,days,priceType) => {
     try {
         const response = await axiosInstance.get(`${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`);
-        console.log('Data fetched successfully:', response.data[priceType]);
+        // console.log('Data fetched successfully:', response.data[priceType]);
         return response.data[priceType];
       } catch (error) {
         console.error('Error fetching data:', error);

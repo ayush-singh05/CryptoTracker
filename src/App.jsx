@@ -1,26 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Common/Header/Header'
-import Footer from './components/Common/Footer/Footer'
-import MainComponent from './components/LandingPage/MainComponent/MainComponent'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import Coin from './components/Coin/Coin'
 import DashboardPage from './components/Dasboard/DashboardPage'
 import Compare from './pages/Compare'
+import Watchlist from './pages/Watchlist'
+import { ToastContainer } from 'react-toastify';
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     
     <div className='bg-black text-white '>
-      <BrowserRouter>
-        <Routes>
+    <BrowserRouter>
+    <ToastContainer/>
+    <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/dashboard' element={<DashboardPage/>}/>
           <Route path='/coin/:id' element={<Coin/>}/>
           <Route path='/compare' element={<Compare/>}/>
-          
+          <Route path='/watchlist' element={<Watchlist/>}/>
+
         </Routes>
       </BrowserRouter>
     </div>

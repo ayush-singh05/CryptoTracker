@@ -4,6 +4,7 @@ import mobile from '../../../assets/mobile.png'
 import gradient from '../../../assets/gradient.png'
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
+import { RWebShare } from "react-web-share";
 
 function MainComponent() {
   return (
@@ -40,7 +41,15 @@ function MainComponent() {
         >
         
           <Link to='/dashboard'><Button text={"dashboard"} /></Link>
-          <Link to="/share"><Button text={'share'} outline={true} /></Link>
+          <RWebShare
+          data={{
+            text: "Crypto Dashboard made using React JS.",
+            url: "https://crypto-tracker-ayush.vercel.app/",
+            title: "CryptoDashboard.",
+          }}
+          >
+          <Button text={'share'} outline={true} />
+          </RWebShare>
         </motion.div>
       </div>
       <div className='w-screen  md:w-2/5 relative p-4 lg:mr-10 flex justify-center md:justify-end mt-7 md:mt-0'>
