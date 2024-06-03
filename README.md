@@ -15,6 +15,7 @@ Crypto Tracker is a web application built with ReactJS for tracking and comparin
 - **React Router**: For handling routing within the application.
 - **Chart.js**: For creating dynamic and interactive charts.
 - **Material-UI**: For stylish and responsive UI components.
+- **Framer Motiom**: For animating text and images
 
 ## Installation
 
@@ -92,6 +93,7 @@ We welcome contributions to improve the Crypto Tracker application. To contribut
 - [ReactJS](https://reactjs.org/)
 - [Chart.js](https://www.chartjs.org/)
 - [Material-UI](https://material-ui.com/)
+- [Framer Motion](https://www.framer.com/motion/)
 
 ## Contact
 
